@@ -12,14 +12,21 @@ app = FastAPI(title="HRMS Lite API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Frontend URL
+    allow_origins=["*"],  # allow Vercel + local frontend
     allow_credentials=True,
-    allow_methods=["*"],  # Allow all methods (GET, POST, DELETE, OPTIONS etc)
-    allow_headers=["*"],  # Allow all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
-# Creates tables on server start
-create_tables()
+
+@app.on_event("startup")
+def startup_event():
+    """
+    Runs once per server startup.
+    Serverless-safe way to initialize DB tables.
+    """
+    create_tables()
+
 
 # Register routes
 app.include_router(employee_router)
