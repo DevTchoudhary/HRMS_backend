@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+
+# Database
+*.sqlite3
+*.db
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Cache
+.cache/
+
+# Uvicorn
+*.pid
+
+# Coverage
+htmlcov/
+.coverage
+
+# Jupyter
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+
+# pytest
+.pytest_cache/
+
+# Local config
+config_local.py
